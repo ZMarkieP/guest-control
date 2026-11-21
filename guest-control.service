@@ -1,0 +1,20 @@
+# Install: sudo cp guest-control.service /etc/systemd/system/ && sudo systemctl enable --now guest-control
+# Put the token in /etc/guest-control.env as: HA_TOKEN=...   (chmod 600)
+[Unit]
+Description=Guest Control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/guest_control
+EnvironmentFile=/etc/guest-control.env
+Environment=PORT=8080
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/home/pi/guest_control/data
+
+[Install]
+WantedBy=multi-user.target

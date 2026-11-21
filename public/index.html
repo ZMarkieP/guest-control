@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D1A2E">
+<title>Guest Controls</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main>
+  <section id="login" hidden>
+    <h1>Welcome</h1>
+    <p class="muted">Sign in to control your room.</p>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <button class="primary" type="submit">Sign in</button>
+      <p id="loginErr" class="err" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="setup" hidden>
+    <h1>Choose a password</h1>
+    <p class="muted">Setting up <strong id="setupEmail"></strong>. You'll use this email and password to sign in.</p>
+    <form id="setupForm">
+      <input type="email" id="setupUser" autocomplete="username" hidden>
+      <label for="newPassword">Password (8+ characters)</label>
+      <input id="newPassword" type="password" autocomplete="new-password" minlength="8" required>
+      <label for="newPassword2">Confirm password</label>
+      <input id="newPassword2" type="password" autocomplete="new-password" minlength="8" required>
+      <button class="primary" type="submit">Save and continue</button>
+      <p id="setupErr" class="err" role="alert"></p>
+    </form>
+  </section>
+
+  <section id="app" hidden>
+    <header><h1 id="hello">Hello</h1><button id="logout" class="link">Sign out</button></header>
+    <p id="mock" class="muted" hidden>Demo mode: no real devices connected.</p>
+    <p id="toast" class="err" role="alert"></p>
+    <div id="scenes"></div>
+    <h2>Lights</h2><div id="lights"></div>
+    <h2>TV</h2><div id="media"></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

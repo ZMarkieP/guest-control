@@ -1,0 +1,32 @@
+{
+  "homeAssistant": {
+    "url": "http://homeassistant.local:8123"
+  },
+  "lights": [
+    {
+      "id": "light.guest_room",
+      "name": "Guest room"
+    },
+    {
+      "id": "light.guest_bath",
+      "name": "Guest bathroom",
+      "dimmable": false
+    }
+  ],
+  "media": [
+    {
+      "id": "media_player.guest_room_tv",
+      "name": "Guest room TV"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene.guest_movie",
+      "name": "Movie"
+    },
+    {
+      "id": "scene.guest_good_night",
+      "name": "Good night"
+    }
+  ]
+}
